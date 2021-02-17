@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?colorPrimary"
+        >
+        <RelativeLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:id="@+id/avatar"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/avatar"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_person"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/rectangle_white"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/icon" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/avatar"
+            android:layout_toRightOf="@+id/avatar"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/monteserrat_medium"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="Ella chiwaya"
+                android:textSize="17sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/monteserrat_ligt"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:text="Ella1@gmail.com"
+                android:textSize="13sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/monteserrat_medium"
+                android:text="Rides"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="2"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/monteserrat_medium"
+                android:text="Bookings"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toHome"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_home_outline"
+                app:tint="#969696"
+                android:contentDescription="@string/icon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/monteserrat_medium"
+                android:layout_marginStart="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/wallet"
+            android:layout_marginStart="20dp"
+            tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_wallet_plus_outline"
+                app:tint="#969696"
+                android:contentDescription="@string/icon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incoming"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/monteserrat_medium"
+                android:layout_marginStart="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_car_key"
+                app:tint="#969696"
+                android:contentDescription="@string/icon" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:id="@+id/rideProgressActive"
+                android:layout_marginStart="20dp">
+                <TextView
+                    android:id="@+id/rideProg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/monteserrat_medium"
+                    android:text="Current trip"
+                    />
+                <TextView
+                    android:layout_width="15sp"
+                    android:layout_height="15sp"
+                    android:text="1"
+                    android:layout_toEndOf="@id/rideProg"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="11sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:background="@drawable/circle_red"
+                    android:layout_toRightOf="@id/rideProg"
+                    android:layout_marginStart="5dp"
+                    tools:ignore="SmallSp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_history"
+                app:tint="#969696"
+                android:contentDescription="@string/icon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Past trips"
+                android:id="@+id/tripsHistory"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/monteserrat_medium"
+                android:layout_marginStart="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/settings"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                android:contentDescription="@string/icon"
+                app:tint="#969696" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/monteserrat_medium"
+                android:layout_marginStart="20dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="#ececec"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferences"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Darkt theme"
+            android:id="@+id/sw"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/monteserrat_medium"
+            android:textColor="#969696"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:id="@+id/logout"
+        tools:ignore="UseCompoundDrawables">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_logout"
+            app:tint="#969696"
+            android:contentDescription="@string/icon" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="log out"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/monteserrat_bold"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+</RelativeLayout>
