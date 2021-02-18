@@ -14,7 +14,7 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecorideagent">
-        <activity android:name=".ui.profile.ProfileActivity"></activity>
+        <activity android:name=".ui.profile.ProfileActivity"/>
         <activity
             android:name=".ui.SplashActivity"
             android:theme="@style/SplashScreenTheme">

@@ -84,13 +84,13 @@
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:text="1"
+                android:text="@string/_12_2k"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/monteserrat_medium"
-                android:text="Rides"
+                android:text="@string/earnings"
                 android:layout_marginLeft="10dp"
                 android:layout_marginStart="10dp" />
         </LinearLayout>
@@ -103,13 +103,13 @@
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:text="2"
+                android:text="@string/_2"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/monteserrat_medium"
-                android:text="Bookings"
+                android:text="@string/trips"
                 android:layout_marginLeft="10dp"
                 android:layout_marginStart="10dp" />
         </LinearLayout>
@@ -156,7 +156,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Incoming"
+                android:text="@string/earnings"
                 android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/monteserrat_medium"
@@ -188,12 +188,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/monteserrat_medium"
-                    android:text="Current trip"
+                    android:text="@string/your_trips"
                     />
                 <TextView
                     android:layout_width="15sp"
                     android:layout_height="15sp"
-                    android:text="1"
+                    android:text="@string/_1"
                     android:layout_toEndOf="@id/rideProg"
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="5dp"
@@ -225,7 +225,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Past trips"
+                android:text="@string/summary"
                 android:id="@+id/tripsHistory"
                 android:layout_marginLeft="20dp"
                 android:layout_gravity="center"

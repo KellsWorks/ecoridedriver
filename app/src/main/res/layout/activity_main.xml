@@ -8,6 +8,8 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="false"
         tools:openDrawer="start"
+        android:animateLayoutChanges="true"
+        android:keepScreenOn="true"
         android:id="@+id/mainDrawer"
         tools:context=".MainActivity">
 
@@ -26,9 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <include layout="@layout/content_main"
-                android:id="@+id/contentMain"
-                />
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
