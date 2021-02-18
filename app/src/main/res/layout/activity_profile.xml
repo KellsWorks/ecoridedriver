@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="?colorPrimary">
+
+        </RelativeLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/kells" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="@dimen/activity_vertical_margin"
+                            android:paddingStart="@dimen/activity_vertical_margin"
+                            android:paddingTop="@dimen/activity_vertical_margin"
+                            android:text="Ella"
+                            android:textSize="12sp" />
+
+
+                        <EditText
+                            android:id="@+id/txtFirstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:imeOptions="actionDone"
+                            android:inputType="textCapWords"
+                            android:maxLines="1"
+                            android:paddingBottom="@dimen/activity_vertical_margin"
+                            android:paddingEnd="@dimen/activity_vertical_margin"
+                            android:paddingStart="@dimen/activity_vertical_margin"
+                            android:paddingTop="7dp"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/text_medium" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/grey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="@dimen/activity_vertical_margin"
+                            android:paddingStart="@dimen/activity_vertical_margin"
+                            android:paddingTop="@dimen/activity_vertical_margin"
+                            android:text="Chiwaya"
+                            android:textSize="12sp" />
+
+
+                        <EditText
+                            android:id="@+id/txtLastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:imeOptions="actionDone"
+                            android:inputType="text|textCapSentences"
+                            android:maxLines="1"
+                            android:paddingBottom="@dimen/activity_vertical_margin"
+                            android:paddingEnd="@dimen/activity_vertical_margin"
+                            android:paddingStart="@dimen/activity_vertical_margin"
+                            android:paddingTop="7dp"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/text_medium" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#ECECEC"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="7dp"
+                        android:paddingStart="7dp"
+                        android:paddingTop="7dp"
+                        android:text="0993634827"
+                        android:textSize="12sp" />
+
+
+                    <EditText
+                        android:id="@+id/txtPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:maxLength="10"
+                        android:enabled="false"
+                        android:padding="7dp"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_medium" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ECECEC"
+                    android:padding="7dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="0dp"
+                        android:paddingTop="8dp"
+                        android:text="Emergecy number"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/blue"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="0dp" />
+
+
+                    <EditText
+                        android:id="@+id/emergency_mobile1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="phone"
+                        android:enabled="true"
+                        android:padding="12dp"
+                        android:maxLength="10"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_medium" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ECECEC"
+                    android:orientation="vertical"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="0dp"
+                        android:paddingTop="8dp"
+                        android:text="Emergency number 2"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/blue"
+                        android:paddingRight="0dp"
+                        android:paddingLeft="8dp" />
+
+
+                    <EditText
+                        android:id="@+id/emergency_mobile2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="phone"
+                        android:enabled="true"
+                        android:padding="12dp"
+                        android:maxLength="10"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_medium" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="7dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="7dp"
+                        android:paddingStart="7dp"
+                        android:paddingTop="7dp"
+                        android:text="Ella@gmail.com"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/txtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:enabled="true"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:padding="7dp"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_medium" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="7dp"
+                        android:paddingStart="7dp"
+                        android:paddingTop="7dp"
+                        android:text="Service"
+                        />
+
+                    <EditText
+                        android:id="@+id/txtService"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:padding="7dp"
+                        android:hint="No services available"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_medium" />
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="#ECECEC"
+                    android:text="Save"
+                    android:textColor="@color/blue" />
+
+                <TextView
+                    android:id="@+id/lblChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_vertical_margin"
+                    android:visibility="visible"
+                    android:text="Looking to change password?"
+                    android:textSize="@dimen/text_medium" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

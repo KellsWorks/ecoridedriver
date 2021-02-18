@@ -1,19 +1,23 @@
 package app.ecoride_agent
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.RelativeLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentContainerView
-import androidx.fragment.app.findFragment
 import app.ecoride_agent.databinding.ActivityMainBinding
+import app.ecoride_agent.ui.profile.ProfileActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+
+class MainActivity : AppCompatActivity(), OnMapReadyCallback,
+    GoogleMap.OnCameraMoveListener, GoogleMap.OnCameraIdleListener {
 
     private lateinit var mainBinding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +34,20 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
         mainBinding.navView.bringToFront()
 
+
         val map = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         map.apply {
             getMapAsync(this@MainActivity)
             onCreate(null)
             onResume()
         }
+
+        mainBinding.navView.findViewById<RelativeLayout>(R.id.avatar)
+            .setOnClickListener {
+                val intent = Intent(this, ProfileActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
+            }
 
     }
 
@@ -52,6 +64,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onMapReady(p0: GoogleMap?) {
+
+    }
+
+    override fun onCameraMove() {
+
+    }
+
+    override fun onCameraIdle() {
 
     }
 }
