@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.zippy.taxi.partner.MvpApplication;
+import app.ecoride_agent.Ecoride;
 
 public class ConnectivityReceiver extends BroadcastReceiver {
 
@@ -32,7 +32,7 @@ public class ConnectivityReceiver extends BroadcastReceiver {
 
     public static boolean isConnected() {
         ConnectivityManager
-                cm = (ConnectivityManager) MvpApplication.getInstance().getApplicationContext()
+                cm = (ConnectivityManager) Ecoride.getInstance().getApplicationContext()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         return activeNetwork != null

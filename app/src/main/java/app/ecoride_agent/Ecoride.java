@@ -2,7 +2,6 @@ package app.ecoride_agent;
 
 import android.app.Application;
 import android.location.Location;
-import android.util.Config;
 
 import androidx.multidex.MultiDex;
 
@@ -27,7 +26,9 @@ public class Ecoride extends Application {
         mInstance = this;
         MultiDex.install(this);
 
-        Timber.plant(Config.DEBUG);
+        if (BuildConfig.DEBUG){
+            Timber.plant(new Timber.DebugTree());
+        }
     }
 
     public static synchronized Ecoride getInstance() {
