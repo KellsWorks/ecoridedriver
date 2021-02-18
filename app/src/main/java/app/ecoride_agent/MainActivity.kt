@@ -2,19 +2,22 @@ package app.ecoride_agent
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import app.ecoride_agent.databinding.ActivityMainBinding
 import app.ecoride_agent.ui.profile.ProfileActivity
+import app.ecoride_agent.utils.ConnectivityReceiver
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback,
-    GoogleMap.OnCameraMoveListener, GoogleMap.OnCameraIdleListener {
+    GoogleMap.OnCameraMoveListener, GoogleMap.OnCameraIdleListener, ConnectivityReceiver.ConnectivityReceiverListener {
 
     private lateinit var mainBinding: ActivityMainBinding
 
@@ -73,5 +76,17 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback,
 
     override fun onCameraIdle() {
 
+    }
+
+    override fun onNetworkConnectionChanged(isConnected: Boolean) {
+        showSnack(isConnected)
+    }
+
+    private fun showSnack(isConnected: Boolean) {
+        if (isConnected) {
+            mainBinding.contentMain.findViewById<LinearLayout>(R.id.lnrNoInternet).visibility = View.GONE
+        } else {
+            mainBinding.contentMain.findViewById<LinearLayout>(R.id.lnrNoInternet).visibility = View.VISIBLE
+        }
     }
 }
