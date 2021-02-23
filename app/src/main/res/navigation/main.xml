@@ -6,5 +6,13 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="app.ecoride_agent.ui.fragments.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_offlineFragment"
+            app:destination="@id/offlineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/offlineFragment"
+        android:name="app.ecoride_agent.ui.fragments.OfflineFragment"
+        android:label="OfflineFragment" />
 </navigation>

@@ -30,6 +30,9 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name=".broadcasts.BroadcastLocation"  android:exported="true"
+            android:enabled="true"
+            />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAT8TT5ONNjFdWWp3enIDIZrVm5bKcm_G4" />

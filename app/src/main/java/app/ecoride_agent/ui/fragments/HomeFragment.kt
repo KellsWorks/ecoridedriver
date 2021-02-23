@@ -19,6 +19,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import app.ecoride_agent.Ecoride
 import app.ecoride_agent.R
 import app.ecoride_agent.customs.CustomMapMarker
@@ -66,6 +67,10 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             onCreate(null)
             onResume()
             getMapAsync(this@HomeFragment)
+        }
+
+        homeBinding.btnGoOffline.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_offlineFragment)
         }
 
     }
