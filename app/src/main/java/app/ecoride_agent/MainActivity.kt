@@ -1,7 +1,9 @@
 package app.ecoride_agent
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -109,13 +111,15 @@ class MainActivity : AppCompatActivity(){
         settings.setOnClickListener {
             navigator.bringToFront()
 
-            startActivity(
-                Intent(
-                    this@MainActivity, SettingsActivity::class.java
-                )
-            )
-            overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
-            openCloseNavigationDrawer()
+            val dialog = Dialog(this, R.style.CustomDialogTheme)
+
+            val view = dialog.layoutInflater.inflate(R.layout.settings_dialog, null)
+            dialog.setContentView(view)
+
+            val close = view.findViewById<ImageView>(R.id.settingsClose)
+            dialog.show()
+
+            close.setOnClickListener { dialog.dismiss() }
         }
 
     }

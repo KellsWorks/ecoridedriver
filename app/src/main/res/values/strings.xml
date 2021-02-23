@@ -25,4 +25,8 @@
     <string name="distance">Distance</string>
     <string name="amount">Amount</string>
     <string name="no_rides">No rides</string>
+    <string name="location">Location</string>
+    <string name="enable_app_to_use_location">Enable app to use location</string>
+    <string name="notifications">Notifications</string>
+    <string name="allow_push_notifications">Allow push notifications</string>
 </resources>
