@@ -15,4 +15,13 @@
     <string name="illustration">illustration</string>
     <string name="documents">Documents</string>
     <string name="active_status">Active status</string>
+    <string name="today_s_completed_target">Todays Completed Target</string>
+    <string name="sample_progress">0/0</string>
+    <string name="target_completed">Target completed</string>
+    <string name="total_earnings">Total earnings</string>
+    <string name="dash">-</string>
+    <string name="time">Time</string>
+    <string name="distance">Distance</string>
+    <string name="amount">Amount</string>
+    <string name="no_rides">No rides</string>
 </resources>

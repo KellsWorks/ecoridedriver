@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import app.ecoride_agent.databinding.ActivityMainBinding
+import app.ecoride_agent.ui.earnings.EarningsActivity
 import app.ecoride_agent.ui.profile.ProfileActivity
 
 
@@ -54,6 +55,13 @@ class MainActivity : AppCompatActivity(){
 
         earnings.setOnClickListener {
             navigator.bringToFront()
+
+            startActivity(
+                Intent(
+                    this@MainActivity, EarningsActivity::class.java
+                )
+            )
+            overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
         }
 
         trips.setOnClickListener {

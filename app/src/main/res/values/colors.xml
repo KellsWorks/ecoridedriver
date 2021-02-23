@@ -15,4 +15,17 @@
     <color name="green">#20a276</color>
     <color name="grey">#969696</color>
     <color name="gray">#ececec</color>
+
+
+
+    <!-- Circle ProgressBar-->
+    <color name="ripple_color">#13aee7</color>
+
+
+
+    <!-- App Theme Color-->
+    <color name="colorTheme">#f6b331</color>
+    <color name="background_grey">#eee</color>
+
+
 </resources>
