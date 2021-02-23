@@ -64,6 +64,14 @@
                 android:text="Ella1@gmail.com"
                 android:textSize="13sp"/>
         </LinearLayout>
+        <ImageView
+            android:id="@+id/imgStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/active_status"
+            app:srcCompat="@drawable/banner_active"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
 
@@ -97,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:id="@+id/wallet"
+            android:id="@+id/toWallet"
             android:layout_marginStart="20dp"
             tools:ignore="UseCompoundDrawables">
             <ImageView
@@ -122,6 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
+            android:id="@+id/toTrips"
             android:layout_marginStart="20dp">
             <ImageView
                 android:layout_width="wrap_content"
@@ -168,6 +177,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
+            android:id="@+id/toSummary"
             tools:ignore="UseCompoundDrawables">
             <ImageView
                 android:layout_width="wrap_content"
@@ -193,18 +203,18 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
+            android:id="@+id/toDocuments"
             tools:ignore="UseCompoundDrawables">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_history"
+                android:src="@drawable/ic_documents"
                 app:tint="#969696"
                 android:contentDescription="@string/icon" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/documents"
-                android:id="@+id/toDocuments"
                 android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/monteserrat_medium"
@@ -215,7 +225,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/settings"
+            android:id="@+id/toSettings"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
@@ -273,7 +283,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
-        android:id="@+id/logout"
+        android:id="@+id/toLogout"
         tools:ignore="UseCompoundDrawables">
         <ImageView
             android:layout_width="wrap_content"

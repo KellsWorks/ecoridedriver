@@ -2,6 +2,7 @@ package app.ecoride_agent
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -36,6 +37,40 @@ class MainActivity : AppCompatActivity(){
                 intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent)
             }
+
+        val navigator = mainBinding.navView
+
+        val home = navigator.findViewById<LinearLayout>(R.id.toHome)
+        val earnings = navigator.findViewById<LinearLayout>(R.id.toWallet)
+        val trips = navigator.findViewById<LinearLayout>(R.id.toTrips)
+        val summary = navigator.findViewById<LinearLayout>(R.id.toSummary)
+        val documents = navigator.findViewById<LinearLayout>(R.id.toDocuments)
+        val settings = navigator.findViewById<LinearLayout>(R.id.toSettings)
+
+        home.setOnClickListener {
+            navigator.bringToFront()
+            openCloseNavigationDrawer()
+        }
+
+        earnings.setOnClickListener {
+            navigator.bringToFront()
+        }
+
+        trips.setOnClickListener {
+            navigator.bringToFront()
+        }
+
+        summary.setOnClickListener {
+            navigator.bringToFront()
+        }
+
+        documents.setOnClickListener {
+            navigator.bringToFront()
+        }
+
+        settings.setOnClickListener {
+            navigator.bringToFront()
+        }
 
     }
 
