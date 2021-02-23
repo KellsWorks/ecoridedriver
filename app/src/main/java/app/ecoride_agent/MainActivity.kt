@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity(){
         }
 
         earnings.setOnClickListener {
+
             navigator.bringToFront()
 
             startActivity(
@@ -66,6 +67,7 @@ class MainActivity : AppCompatActivity(){
                 )
             )
             overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
+            openCloseNavigationDrawer()
         }
 
         trips.setOnClickListener {
@@ -77,6 +79,7 @@ class MainActivity : AppCompatActivity(){
                 )
             )
             overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
+            openCloseNavigationDrawer()
         }
 
         summary.setOnClickListener {
@@ -88,6 +91,7 @@ class MainActivity : AppCompatActivity(){
                 )
             )
             overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
+            openCloseNavigationDrawer()
         }
 
         documents.setOnClickListener {
@@ -99,6 +103,7 @@ class MainActivity : AppCompatActivity(){
                 )
             )
             overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
+            openCloseNavigationDrawer()
         }
 
         settings.setOnClickListener {
@@ -110,6 +115,7 @@ class MainActivity : AppCompatActivity(){
                 )
             )
             overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
+            openCloseNavigationDrawer()
         }
 
     }
