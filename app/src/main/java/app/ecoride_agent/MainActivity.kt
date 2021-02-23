@@ -8,8 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import app.ecoride_agent.databinding.ActivityMainBinding
+import app.ecoride_agent.ui.documents.DocumentsActivity
 import app.ecoride_agent.ui.earnings.EarningsActivity
 import app.ecoride_agent.ui.profile.ProfileActivity
+import app.ecoride_agent.ui.settings.SettingsActivity
+import app.ecoride_agent.ui.summary.SummaryActivity
+import app.ecoride_agent.ui.trips.TripsActivity
 
 
 class MainActivity : AppCompatActivity(){
@@ -66,18 +70,46 @@ class MainActivity : AppCompatActivity(){
 
         trips.setOnClickListener {
             navigator.bringToFront()
+
+            startActivity(
+                Intent(
+                    this@MainActivity, TripsActivity::class.java
+                )
+            )
+            overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
         }
 
         summary.setOnClickListener {
             navigator.bringToFront()
+
+            startActivity(
+                Intent(
+                    this@MainActivity, SummaryActivity::class.java
+                )
+            )
+            overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
         }
 
         documents.setOnClickListener {
             navigator.bringToFront()
+
+            startActivity(
+                Intent(
+                    this@MainActivity, DocumentsActivity::class.java
+                )
+            )
+            overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
         }
 
         settings.setOnClickListener {
             navigator.bringToFront()
+
+            startActivity(
+                Intent(
+                    this@MainActivity, SettingsActivity::class.java
+                )
+            )
+            overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim)
         }
 
     }
