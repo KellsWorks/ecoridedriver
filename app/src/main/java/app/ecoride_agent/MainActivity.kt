@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity(){
         }
 
         settings.setOnClickListener {
-            navigator.bringToFront()
+            closeNavigationDrawer()
 
             val dialog = Dialog(this, R.style.CustomDialogTheme)
 
@@ -132,8 +132,9 @@ class MainActivity : AppCompatActivity(){
         }
     }
 
-
-
+    private fun closeNavigationDrawer(){
+        mainBinding.mainDrawer.closeDrawer(GravityCompat.START)
+    }
 
     override fun onBackPressed() {
         super.onBackPressed()

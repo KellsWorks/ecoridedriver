@@ -29,4 +29,6 @@
     <string name="enable_app_to_use_location">Enable app to use location</string>
     <string name="notifications">Notifications</string>
     <string name="allow_push_notifications">Allow push notifications</string>
+    <string name="go_online">Go online</string>
+    <string name="image">image</string>
 </resources>
