@@ -18,12 +18,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import app.ecoride_agent.Ecoride
 import app.ecoride_agent.R
 import app.ecoride_agent.customs.CustomMapMarker
 import app.ecoride_agent.databinding.FragmentHomeBinding
+import app.ecoride_agent.utils.GPSTracker
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.*
@@ -50,7 +52,7 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
         return homeBinding.root
     }
 
-    private fun getMarkerIcon(root: ViewGroup, text: String?, image : Int, isSelected: Boolean): BitmapDescriptor? {
+    private fun getMarkerIcon(root: ViewGroup, text: String?, image: Int, isSelected: Boolean): BitmapDescriptor? {
         val markerView = CustomMapMarker(root, text, image, isSelected)
         markerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
         markerView.layout(0, 0, markerView.measuredWidth, markerView.measuredHeight)
@@ -86,7 +88,12 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             mGoogleMap.isTrafficEnabled = true
             mGoogleMap.isBuildingsEnabled = true
             mGoogleMap.isIndoorEnabled = true
-            mGoogleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(requireContext(), app.ecoride_agent.R.raw.style_json))
+            mGoogleMap.setMapStyle(
+                MapStyleOptions.loadRawResourceStyle(
+                    requireContext(),
+                    app.ecoride_agent.R.raw.style_json
+                )
+            )
 
             mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
             getLastLocation()
@@ -107,11 +114,14 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
                 root = (requireView().parent as ViewGroup),
                 text = "You are currently here",
                 image = app.ecoride_agent.R.drawable.rectangle_side,
-                isSelected = true)
+                isSelected = true
+            )
 
-            mGoogleMap.addMarker(MarkerOptions()
-                .position(LatLng(lat!!.toDouble(), long!!.toDouble()))
-                .icon(markerIcon))
+            mGoogleMap.addMarker(
+                MarkerOptions()
+                    .position(LatLng(lat!!.toDouble(), long!!.toDouble()))
+                    .icon(markerIcon)
+            )
 
             val camera = CameraPosition.builder().target(LatLng(lat.toDouble(), long.toDouble())).zoom(
                 16F
@@ -135,6 +145,9 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             }
 
         }
+
+        val serviceIntent = Intent(requireActivity(), GPSTracker::class.java)
+        ContextCompat.startForegroundService(requireActivity(), serviceIntent)
     }
 
     open fun getLocationFromAddress(context: Context?, strAddress: String?): LatLng? {

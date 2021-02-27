@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+
+
     <application
         android:name=".Ecoride"
         android:allowBackup="true"
@@ -37,19 +39,27 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".broadcasts.BroadcastLocation"
-            android:enabled="true"
-            android:exported="true"
-             />
+
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
 
         <service
             android:name=".widgets.ChatHeadService"
             android:exported="false"/>
 
+        <service
+            android:name=".utils.GPSTracker"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAT8TT5ONNjFdWWp3enIDIZrVm5bKcm_G4" />
+
     </application>
 
 </manifest>

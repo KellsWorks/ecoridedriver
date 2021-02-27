@@ -1,4 +1,4 @@
-package app.ecoride_agent.utils;
+package app.ecoride_agent.helpers;
 
 import android.content.Context;
 import android.content.SharedPreferences;

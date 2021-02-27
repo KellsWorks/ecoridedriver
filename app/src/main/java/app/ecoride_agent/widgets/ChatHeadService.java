@@ -18,7 +18,7 @@ import androidx.core.app.NotificationCompat;
 
 import app.ecoride_agent.MainActivity;
 import app.ecoride_agent.R;
-import app.ecoride_agent.utils.SharedHelper;
+import app.ecoride_agent.helpers.SharedHelper;
 import app.ecoride_agent.utils.Utilities;
 import de.hdodenhof.circleimageview.CircleImageView;
 import jp.co.recruit_lifestyle.android.floatingview.FloatingViewListener;
