@@ -31,4 +31,15 @@
     <string name="allow_push_notifications">Allow push notifications</string>
     <string name="go_online">Go online</string>
     <string name="image">image</string>
+    <string name="name">Ella chiwaya</string>
+    <string name="eee">Ella1@gmail.com</string>
+    <string name="home">Home</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="preferences">Preferences</string>
+    <string name="log_out">Log out</string>
+    <string name="no_data_found">No data found</string>
+    <string name="_45">45</string>
+    <string name="reject">Reject</string>
+    <string name="drop_at">Drop at</string>
+    <string name="total_rides">Total rides</string>
 </resources>

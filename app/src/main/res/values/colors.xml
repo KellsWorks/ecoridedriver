@@ -7,7 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue">#039BE5</color>
+    <color name="blue">#f44236</color>
     <color name="red">#f44236</color>
     <color name="dialogBackground">#BE000000</color>
     <color name="whitish">#fafafa</color>
@@ -19,13 +19,19 @@
 
 
     <!-- Circle ProgressBar-->
-    <color name="ripple_color">#13aee7</color>
+    <color name="ripple_color">#f44236</color>
 
 
 
     <!-- App Theme Color-->
     <color name="colorTheme">#f6b331</color>
     <color name="background_grey">#eee</color>
+
+
+
+    <color name="ratingBarColor">#fdc928</color>
+    <color name="instant_btn">#F79646</color>
+
 
 
 </resources>

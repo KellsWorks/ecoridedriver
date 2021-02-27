@@ -16,17 +16,20 @@
         android:layout_height="wrap_content"
         android:background="?colorPrimary"
         >
+
         <RelativeLayout
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="20dp"
             android:id="@+id/avatar"
             >
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/avatar"
                 />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,12 +42,13 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/avatar"
             android:layout_toRightOf="@+id/avatar"
             android:layout_marginTop="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="RelativeOverlap">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -52,7 +56,7 @@
                 android:fontFamily="@font/monteserrat_medium"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:text="Ella chiwaya"
+                android:text="@string/name"
                 android:textSize="17sp"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -61,17 +65,23 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_marginTop="10dp"
-                android:text="Ella1@gmail.com"
+                android:text="@string/eee"
                 android:textSize="13sp"/>
         </LinearLayout>
+
         <ImageView
             android:id="@+id/imgStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
             android:contentDescription="@string/active_status"
-            app:srcCompat="@drawable/banner_active"
-            android:layout_alignParentEnd="true" />
+            app:srcCompat="@drawable/circle_green" />
+
     </RelativeLayout>
 
 
@@ -92,7 +102,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Home"
+                android:text="@string/home"
                 android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/monteserrat_medium"
@@ -131,6 +141,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:id="@+id/toTrips"
+            android:orientation="horizontal"
             android:layout_marginStart="20dp">
             <ImageView
                 android:layout_width="wrap_content"
@@ -143,6 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/rideProgressActive"
                 android:layout_marginStart="20dp">
                 <TextView
@@ -166,6 +178,7 @@
                     android:background="@drawable/circle_red"
                     android:layout_toRightOf="@id/rideProg"
                     android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
                     tools:ignore="SmallSp" />
             </RelativeLayout>
 
@@ -239,7 +252,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Settings"
+                android:text="@string/settings"
                 android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/monteserrat_medium"
@@ -258,7 +271,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Preferences"
+            android:text="@string/preferences"
             android:layout_margin="20dp"
             android:textStyle="bold"
             android:textSize="18sp"
@@ -267,7 +280,7 @@
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Darkt theme"
+            android:text="@string/dark_theme"
             android:id="@+id/sw"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -294,7 +307,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="log out"
+            android:text="@string/log_out"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/monteserrat_bold"
             android:layout_gravity="center"
