@@ -3,16 +3,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.fragments.HomeFragment">
-
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle_primary"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/spot"
+            >
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="17dp"
+                android:src="@drawable/circle_green"
+                android:contentDescription="@string/dot" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/monteserrat_semibold"
+                android:text="@string/spot_booking"
+                android:id="@+id/spotBooking"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_margin="15sp"
+                android:src="@drawable/ic_heart"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/icon" />
+
+        </RelativeLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,16 +74,24 @@
             android:gravity="bottom">
 
 
-            <Button
+            <RelativeLayout
                 android:id="@+id/btnGoOffline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:background="@color/green"
-                android:text="@string/go_offline"
-                android:textStyle="bold"
-                android:textColor="#FFF" />
+                android:background="@drawable/button"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/go_offline"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:textColor="#FFF"
+                    android:layout_centerInParent="true"
+                    android:padding="12sp"/>
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -55,6 +116,6 @@
 
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 </layout>

@@ -2,6 +2,7 @@ package app.ecoride_agent.ui.fragments
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -50,6 +51,13 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
         return homeBinding.root
     }
 
+    private fun spotBooking(){
+        val dialog = Dialog(requireContext(), R.style.CustomDialogTheme)
+        val view = dialog.layoutInflater.inflate(R.layout.dialog_spot_booking, null)
+        dialog.setContentView(view)
+        dialog.show()
+    }
+
     private fun getMarkerIcon(root: ViewGroup, text: String?, image: Int, isSelected: Boolean): BitmapDescriptor? {
         val markerView = CustomMapMarker(root, text, image, isSelected)
         markerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
@@ -71,6 +79,10 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
 
         homeBinding.btnGoOffline.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_offlineFragment)
+        }
+
+        homeBinding.spotBooking.setOnClickListener {
+            spotBooking()
         }
 
     }
