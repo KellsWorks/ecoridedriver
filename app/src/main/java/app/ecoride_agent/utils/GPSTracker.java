@@ -73,7 +73,11 @@ public class GPSTracker extends Service{
         @Override
         public void onLocationChanged(Location location) {
 
-            Timber.e(location.toString());
+            if (location.getProvider().equals(KalmanLocationManager.KALMAN_PROVIDER)) {
+
+                Timber.d(location.getLatitude() + " " + location.getLongitude());
+                EventBus.getDefault().postSticky(location);
+            }
 
         }
 
