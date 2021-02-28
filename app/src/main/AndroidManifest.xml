@@ -5,9 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
 
     <application
         android:name=".Ecoride"
@@ -17,7 +16,8 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecorideagent">
-        <activity android:name=".ui.trips.TripsActivity"/>
+        <activity android:name=".ui.auth.AuthenticationActivity"></activity>
+        <activity android:name=".ui.trips.TripsActivity" />
         <activity android:name=".ui.summary.SummaryActivity" />
         <activity android:name=".ui.settings.SettingsActivity" />
         <activity android:name=".ui.earnings.EarningsActivity" />
@@ -38,17 +38,13 @@
             </intent-filter>
         </activity>
 
-
-
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-
         <service
             android:name=".widgets.ChatHeadService"
-            android:exported="false"/>
-
+            android:exported="false" />
         <service
             android:name=".utils.GPSTracker"
             android:enabled="true"
@@ -58,7 +54,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAT8TT5ONNjFdWWp3enIDIZrVm5bKcm_G4" />
-
     </application>
 
 </manifest>
