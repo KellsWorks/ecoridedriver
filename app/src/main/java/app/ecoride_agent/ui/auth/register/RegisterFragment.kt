@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import app.ecoride_agent.R
 import app.ecoride_agent.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
@@ -20,5 +22,12 @@ class RegisterFragment : Fragment() {
         registerBinding.lifecycleOwner = this
 
         return registerBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        registerBinding.toVerifyOTP.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_OTPVerificationFragment)
+        }
     }
 }

@@ -14,5 +14,13 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="app.ecoride_agent.ui.auth.register.RegisterFragment"
-        android:label="RegisterFragment" />
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_OTPVerificationFragment"
+            app:destination="@id/OTPVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/OTPVerificationFragment"
+        android:name="app.ecoride_agent.ui.auth.register.OTPVerificationFragment"
+        android:label="OTPVerificationFragment" />
 </navigation>

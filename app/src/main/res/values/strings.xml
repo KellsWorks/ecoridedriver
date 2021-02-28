@@ -45,4 +45,15 @@
     <string name="dot">TODO</string>
     <string name="cancel">Cancel</string>
     <string name="spot_booking">Spot booking</string>
+    <string name="sign_in">Sign in</string>
+    <string name="continue_to_sign_in">Continue to sign in</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="password">Password</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="continue__">Continue</string>
+    <string name="legal_banner">By continuing, I confirm that i have read and agree to the Terms and conditions and Privacy policy</string>
+    <string name="verify">Verify</string>
+    <string name="resend_code_in_02_59">Resend code in 02:59</string>
+    <string name="otp_verification">OTP Verification</string>
 </resources>
