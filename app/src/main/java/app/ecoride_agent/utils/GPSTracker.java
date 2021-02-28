@@ -28,6 +28,8 @@ import org.greenrobot.eventbus.EventBus;
 
 import app.ecoride_agent.MainActivity;
 import app.ecoride_agent.R;
+import app.ecoride_agent.broadcasts.BroadcastLocation;
+import app.ecoride_agent.helpers.SharedHelper;
 import app.ecoride_agent.utils.kalman.KalmanLocationManager;
 import timber.log.Timber;
 
@@ -64,6 +66,7 @@ public class GPSTracker extends Service{
 
     String status_update = "Init";
     Context context;
+    BroadcastLocation broadcastLocation;
 
     /**
      * Listener used to get updates from KalmanLocationManager (the good old Android LocationListener).
@@ -74,9 +77,8 @@ public class GPSTracker extends Service{
         public void onLocationChanged(Location location) {
 
             if (location.getProvider().equals(KalmanLocationManager.KALMAN_PROVIDER)) {
-
-                Timber.d(location.getLatitude() + " " + location.getLongitude());
-                EventBus.getDefault().postSticky(location);
+                broadcastLocation = new BroadcastLocation();
+                broadcastLocation.broadcastLocation(SharedHelper.getIntKey(context, "user-id"), location.getLatitude(), location.getLongitude());
             }
 
         }

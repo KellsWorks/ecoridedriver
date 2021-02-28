@@ -16,6 +16,7 @@ public class Ecoride extends Application {
     public static Location mLastKnownLocation;
     public static final int PERMISSIONS_REQUEST_PHONE = 4;
     public static final int PICK_LOCATION_REQUEST_CODE = 3;
+    public static final String BASE_URL = "http://192.168.43.200:322/api/ecoride/v1/";
 
     private static Ecoride mInstance;
 
