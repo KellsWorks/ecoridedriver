@@ -1,6 +1,5 @@
 package app.ecoride_agent.utils;
 
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +8,7 @@ import android.net.NetworkInfo;
 
 import app.ecoride_agent.Ecoride;
 
+@SuppressWarnings("ALL")
 public class ConnectivityReceiver extends BroadcastReceiver {
 
     public static ConnectivityReceiverListener connectivityReceiverListener;

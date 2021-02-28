@@ -56,4 +56,8 @@
     <string name="verify">Verify</string>
     <string name="resend_code_in_02_59">Resend code in 02:59</string>
     <string name="otp_verification">OTP Verification</string>
+    <string name="resend">Resend code</string>
+    <string name="edit">Edit</string>
+    <string name="enter_the_6_digit_code_sent_to_you_at">Enter the 6-digit code sent to you at</string>
+    <string name="_265_880_28_56_92">+265 880 28 56 92</string>
 </resources>

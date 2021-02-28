@@ -8,7 +8,6 @@ import retrofit2.http.POST
 
 interface ApiInterface {
 
-
     /* Location API */
 
     @POST("update-location")
@@ -18,4 +17,5 @@ interface ApiInterface {
         @Field("lat") lat : String,
         @Field("long") long : String
     ) : Call<GeneralResponse>
+
 }
