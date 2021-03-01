@@ -6,11 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import app.ecoride_agent.R
+import app.ecoride_agent.databinding.FragmentUpcomingRequestBinding
 
 open class UpcomingRequest : Fragment() {
 
     private lateinit var mPlayer: MediaPlayer
+
+    private lateinit var upcomingRequestBinding: FragmentUpcomingRequestBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +25,13 @@ open class UpcomingRequest : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_upcoming_request, container, false)
+
+        upcomingRequestBinding = FragmentUpcomingRequestBinding.inflate(
+            inflater, container, false
+        )
+        upcomingRequestBinding.lifecycleOwner = this
+
+        return upcomingRequestBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,6 +39,14 @@ open class UpcomingRequest : Fragment() {
 
         mPlayer.start()
         mPlayer.isLooping
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        upcomingRequestBinding.btnReject.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
     override fun onStop() {
