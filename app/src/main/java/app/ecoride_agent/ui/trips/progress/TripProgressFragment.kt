@@ -19,6 +19,8 @@ import app.ecoride_agent.customs.CustomMapMarker
 import app.ecoride_agent.databinding.FragmentTripProgressBinding
 import app.ecoride_agent.utils.GoogleMapDTO
 import app.ecoride_agent.utils.JavaUtils
+import com.google.android.gms.maps.CameraUpdate
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.*
@@ -66,6 +68,17 @@ class TripProgressFragment : Fragment() , OnMapReadyCallback{
         mGoogleMap.setMapStyle(
             MapStyleOptions.loadRawResourceStyle(
                 requireActivity(), R.raw.style_json))
+
+        val icon = BitmapDescriptorFactory.fromResource(R.drawable.user_marker)
+
+        val markerOptionsFour = MarkerOptions().position(LatLng(-15.809818349256762, 35.059702333613906))
+            .icon(icon)
+
+        mGoogleMap.addMarker(markerOptionsFour)
+
+        val cameraUpdate: CameraUpdate =
+            CameraUpdateFactory.newLatLngZoom(LatLng(-15.809818349256762, 35.059702333613906), Ecoride.DEFAULT_ZOOM)
+        mGoogleMap.animateCamera(cameraUpdate)
     }
 
     private fun getMarkerIcon(root: ViewGroup, text: String?, image: Int, isSelected: Boolean): BitmapDescriptor? {
