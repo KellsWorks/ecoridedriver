@@ -73,7 +73,8 @@ class MainActivity : AppCompatActivity(){
 
         val switchTheme = navigator.findViewById<SwitchMaterial>(R.id.sw)
 
-        switchTheme.setOnCheckedChangeListener { _, _ ->
+        switchTheme.setOnClickListener {
+
             when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
                 Configuration.UI_MODE_NIGHT_YES ->
                 {
