@@ -18,6 +18,20 @@
         android:background="?colorPrimary"
         >
 
+        <ImageView
+            android:id="@+id/imgStatus"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:contentDescription="@string/active_status"
+            android:src="@drawable/ic_wireless_symbol"
+            app:tint="@color/white" />
+
         <RelativeLayout
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -73,18 +87,7 @@
                 android:textSize="13sp"/>
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imgStatus"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
-            android:contentDescription="@string/active_status"
-            app:srcCompat="@drawable/circle_green" />
+
 
     </RelativeLayout>
 
