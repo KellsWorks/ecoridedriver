@@ -21,7 +21,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import app.ecoride_agent.Ecoride
-import app.ecoride_agent.Ecoride.mLastKnownLocation
 import app.ecoride_agent.R
 import app.ecoride_agent.customs.CustomMapMarker
 import app.ecoride_agent.databinding.FragmentHomeBinding
@@ -78,7 +77,7 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
         }
 
         homeBinding.btnGoOffline.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_offlineFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_upcomingRequest)
         }
 
         homeBinding.spotBooking.setOnClickListener {

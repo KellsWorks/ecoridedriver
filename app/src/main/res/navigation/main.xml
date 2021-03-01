@@ -10,9 +10,16 @@
         <action
             android:id="@+id/action_homeFragment_to_offlineFragment"
             app:destination="@id/offlineFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_upcomingRequest"
+            app:destination="@id/upcomingRequest" />
     </fragment>
     <fragment
         android:id="@+id/offlineFragment"
         android:name="app.ecoride_agent.ui.fragments.OfflineFragment"
         android:label="OfflineFragment" />
+    <fragment
+        android:id="@+id/upcomingRequest"
+        android:name="app.ecoride_agent.ui.upcoming.UpcomingRequest"
+        android:label="UpcomingRequest" />
 </navigation>
