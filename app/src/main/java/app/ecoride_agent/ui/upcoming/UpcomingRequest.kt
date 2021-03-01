@@ -12,7 +12,7 @@ import app.ecoride_agent.databinding.FragmentUpcomingRequestBinding
 
 open class UpcomingRequest : Fragment() {
 
-    private lateinit var mPlayer: MediaPlayer
+    private var mPlayer : MediaPlayer? = null
 
     private lateinit var upcomingRequestBinding: FragmentUpcomingRequestBinding
 
@@ -37,8 +37,8 @@ open class UpcomingRequest : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mPlayer.start()
-        mPlayer.isLooping
+        mPlayer?.start()
+        mPlayer?.isLooping
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -47,6 +47,11 @@ open class UpcomingRequest : Fragment() {
         upcomingRequestBinding.btnReject.setOnClickListener {
             findNavController().navigateUp()
         }
+
+        upcomingRequestBinding.btnAccept.setOnClickListener {
+            findNavController().navigate(R.id.action_upcomingRequest_to_tripProgressFragment)
+        }
+
     }
 
     override fun onStop() {
@@ -55,12 +60,13 @@ open class UpcomingRequest : Fragment() {
     }
 
     private fun stopMediaPlayer() {
-        mPlayer.stop()
-        mPlayer.release()
+        mPlayer?.stop()
+        mPlayer?.release()
+        mPlayer = null
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onPause() {
+        super.onPause()
         stopMediaPlayer()
     }
 

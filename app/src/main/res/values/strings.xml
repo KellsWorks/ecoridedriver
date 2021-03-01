@@ -70,4 +70,8 @@
     <string name="continue_to_register">Continue to register</string>
     <string name="confirm_password">Confirm password</string>
     <string name="emergency_line">Emergency line</string>
+    <string name="ride_progress">Ride progress</string>
+    <string name="decline">decline</string>
+    <string name="start">start</string>
+    <string name="maps_api_key">AIzaSyAT8TT5ONNjFdWWp3enIDIZrVm5bKcm_G4</string>
 </resources>

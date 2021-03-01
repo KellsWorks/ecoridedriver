@@ -21,5 +21,13 @@
     <fragment
         android:id="@+id/upcomingRequest"
         android:name="app.ecoride_agent.ui.upcoming.UpcomingRequest"
-        android:label="UpcomingRequest" />
+        android:label="UpcomingRequest" >
+        <action
+            android:id="@+id/action_upcomingRequest_to_tripProgressFragment"
+            app:destination="@id/tripProgressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tripProgressFragment"
+        android:name="app.ecoride_agent.ui.trips.progress.TripProgressFragment"
+        android:label="TripProgressFragment" />
 </navigation>
