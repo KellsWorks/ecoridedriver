@@ -17,14 +17,11 @@ import android.location.LocationProvider;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
-
-import org.greenrobot.eventbus.EventBus;
 
 import app.ecoride_agent.MainActivity;
 import app.ecoride_agent.R;
@@ -78,7 +75,7 @@ public class GPSTracker extends Service{
 
             if (location.getProvider().equals(KalmanLocationManager.KALMAN_PROVIDER)) {
                 broadcastLocation = new BroadcastLocation();
-                broadcastLocation.broadcastLocation(SharedHelper.getIntKey(context, "user-id"), location.getLatitude(), location.getLongitude());
+                broadcastLocation.broadcastLocation(SharedHelper.getIntKey(context, "user_id"), location.getLatitude(), location.getLongitude());
             }
 
         }

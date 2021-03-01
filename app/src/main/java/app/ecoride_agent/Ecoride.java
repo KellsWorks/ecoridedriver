@@ -11,12 +11,10 @@ import timber.log.Timber;
 public class Ecoride extends Application {
 
     public static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
-    public static final int PLACE_AUTOCOMPLETE_REQUEST_CODE = 2;
     public static float DEFAULT_ZOOM = 15;
     public static Location mLastKnownLocation;
-    public static final int PERMISSIONS_REQUEST_PHONE = 4;
-    public static final int PICK_LOCATION_REQUEST_CODE = 3;
     public static final String BASE_URL = "http://192.168.43.200:322/api/ecoride/v1/";
+    public static final String PROFILES_URL = "http://192.168.43.200:322/storage/profile/";
 
     private static Ecoride mInstance;
 

@@ -1,6 +1,7 @@
 package app.ecoride_agent.network
 
 import app.ecoride_agent.network.responses.GeneralResponse
+import app.ecoride_agent.network.responses.location.LocationUpdate
 import app.ecoride_agent.network.responses.login.Login
 import app.ecoride_agent.network.responses.register.Register
 import retrofit2.Call
@@ -54,6 +55,6 @@ interface ApiInterface {
         @Field("id") id : Int,
         @Field("lat") lat : String,
         @Field("long") long : String
-    ) : Call<GeneralResponse>
+    ) : Call<LocationUpdate>
 
 }

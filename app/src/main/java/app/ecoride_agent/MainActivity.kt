@@ -2,26 +2,32 @@ package app.ecoride_agent
 
 import android.app.Dialog
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
+import app.ecoride_agent.customs.CustomProgressDialog
 import app.ecoride_agent.databinding.ActivityMainBinding
+import app.ecoride_agent.helpers.SharedHelper
+import app.ecoride_agent.ui.auth.AuthenticationActivity
 import app.ecoride_agent.ui.documents.DocumentsActivity
 import app.ecoride_agent.ui.earnings.EarningsActivity
 import app.ecoride_agent.ui.profile.ProfileActivity
-import app.ecoride_agent.ui.settings.SettingsActivity
 import app.ecoride_agent.ui.summary.SummaryActivity
 import app.ecoride_agent.ui.trips.TripsActivity
+import com.bumptech.glide.Glide
+import com.google.android.material.switchmaterial.SwitchMaterial
 
 
 class MainActivity : AppCompatActivity(){
 
     private lateinit var mainBinding: ActivityMainBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,12 +53,62 @@ class MainActivity : AppCompatActivity(){
 
         val navigator = mainBinding.navView
 
+        navigator.findViewById<TextView>(R.id.username).text = SharedHelper.getKey(this, "username", "Ecoride user")
+        navigator.findViewById<TextView>(R.id.userEmail).text = SharedHelper.getKey(this, "email", "info@ecoridemalawi.com")
+
+        val profilePhoto = navigator.findViewById<de.hdodenhof.circleimageview.CircleImageView>(R.id.userAvatar)
+
+            Glide
+                .with(this)
+                .load(Ecoride.PROFILES_URL+SharedHelper.getKey(this, "user_photo", "avatar.png"))
+                .centerCrop()
+                .into(profilePhoto)
+
         val home = navigator.findViewById<LinearLayout>(R.id.toHome)
         val earnings = navigator.findViewById<LinearLayout>(R.id.toWallet)
         val trips = navigator.findViewById<LinearLayout>(R.id.toTrips)
         val summary = navigator.findViewById<LinearLayout>(R.id.toSummary)
         val documents = navigator.findViewById<LinearLayout>(R.id.toDocuments)
         val settings = navigator.findViewById<LinearLayout>(R.id.toSettings)
+
+        val switchTheme = navigator.findViewById<SwitchMaterial>(R.id.sw)
+
+        switchTheme.setOnCheckedChangeListener { _, _ ->
+            when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+                Configuration.UI_MODE_NIGHT_YES ->
+                {
+                    switchTheme.isChecked = true
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
+                Configuration.UI_MODE_NIGHT_NO ->
+                {
+                    switchTheme.isChecked = false
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }
+            }
+        }
+
+        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+            Configuration.UI_MODE_NIGHT_YES ->
+            {
+                switchTheme.isChecked = true
+            }
+            Configuration.UI_MODE_NIGHT_NO ->
+            {
+                switchTheme.isChecked = false
+            }
+        }
+
+        val toLogout = navigator.findViewById<LinearLayout>(R.id.toLogout)
+
+        toLogout.setOnClickListener {
+            closeNavigationDrawer()
+            CustomProgressDialog().show(this, "Logging out...")
+            SharedHelper.clearSharedPreferences(this)
+            startActivity(Intent(
+                    this, AuthenticationActivity::class.java
+            ))
+        }
 
         home.setOnClickListener {
             navigator.bringToFront()
