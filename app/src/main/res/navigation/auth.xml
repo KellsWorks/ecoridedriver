@@ -16,11 +16,23 @@
         android:name="app.ecoride_agent.ui.auth.register.RegisterFragment"
         android:label="RegisterFragment" >
         <action
-            android:id="@+id/action_registerFragment_to_OTPVerificationFragment"
-            app:destination="@id/OTPVerificationFragment" />
+            android:id="@+id/action_registerFragment_to_registerDetailsFragment"
+            app:destination="@id/registerDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/OTPVerificationFragment"
         android:name="app.ecoride_agent.ui.auth.register.OTPVerificationFragment"
-        android:label="OTPVerificationFragment" />
+        android:label="OTPVerificationFragment" >
+        <action
+            android:id="@+id/action_OTPVerificationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerDetailsFragment"
+        android:name="app.ecoride_agent.ui.auth.register.RegisterDetailsFragment"
+        android:label="RegisterDetailsFragment" >
+        <action
+            android:id="@+id/action_registerDetailsFragment_to_OTPVerificationFragment"
+            app:destination="@id/OTPVerificationFragment" />
+    </fragment>
 </navigation>

@@ -60,4 +60,14 @@
     <string name="edit">Edit</string>
     <string name="enter_the_6_digit_code_sent_to_you_at">Enter the 6-digit code sent to you at</string>
     <string name="_265_880_28_56_92">+265 880 28 56 92</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="phone_number">Phone number</string>
+    <string name="mw_code">+265</string>
+    <string name="log_in">Log in</string>
+    <string name="do_not_have_an_account_create_an_account">Do not have an account? Create an account</string>
+    <string name="create_profile">Create profile</string>
+    <string name="username">Username</string>
+    <string name="continue_to_register">Continue to register</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="emergency_line">Emergency line</string>
 </resources>

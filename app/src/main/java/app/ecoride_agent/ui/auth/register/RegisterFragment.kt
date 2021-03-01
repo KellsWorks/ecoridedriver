@@ -27,7 +27,7 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registerBinding.toVerifyOTP.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_OTPVerificationFragment)
+            findNavController().navigate(R.id.action_registerFragment_to_registerDetailsFragment)
         }
     }
 }
