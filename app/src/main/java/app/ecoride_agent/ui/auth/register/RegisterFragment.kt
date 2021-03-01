@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import app.ecoride_agent.R
 import app.ecoride_agent.databinding.FragmentRegisterBinding
+import app.ecoride_agent.helpers.SharedHelper
+import es.dmoral.toasty.Toasty
 
 class RegisterFragment : Fragment() {
 
@@ -27,7 +29,22 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registerBinding.toVerifyOTP.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_registerDetailsFragment)
+            if (validate()){
+                SharedHelper.putKey(requireContext(), "register_phone", registerBinding.registerPhoneGet.text.toString())
+                findNavController().navigate(R.id.action_registerFragment_to_registerDetailsFragment)
+            }
         }
+        registerBinding.registerClose.setOnClickListener {
+            findNavController().navigateUp()
+        }
+    }
+
+    private fun validate() : Boolean{
+        return if (registerBinding.registerPhoneGet.text?.length != 9){
+            Toasty.warning(requireContext(), "Enter a 9 digit number").show()
+
+            false
+        }else
+            true
     }
 }

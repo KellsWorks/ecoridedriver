@@ -2,6 +2,7 @@ package app.ecoride_agent.ui.auth.register
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,6 +50,15 @@ class OTPVerificationFragment : Fragment() {
             findNavController().navigateUp()
         }
         onBackPressed()
+
+        otpVerificationBinding.verifyPhone.setOnClickListener {
+            otpVerificationBinding.otpGo.visibility = View.GONE
+            otpVerificationBinding.cpPbar.visibility = View.VISIBLE
+
+            Handler().postDelayed({
+                findNavController().navigate(R.id.action_OTPVerificationFragment_to_loginFragment)
+            }, 5000)
+        }
 
     }
 

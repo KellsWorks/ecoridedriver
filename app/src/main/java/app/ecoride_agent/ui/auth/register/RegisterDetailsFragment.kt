@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import app.ecoride_agent.R
 import app.ecoride_agent.databinding.FragmentRegisterDetailsBinding
+import app.ecoride_agent.helpers.SharedHelper
 
 
 class RegisterDetailsFragment : Fragment() {
@@ -38,6 +39,10 @@ class RegisterDetailsFragment : Fragment() {
         registerDetailsBinding.registerDetailsBack.setOnClickListener {
             findNavController().navigateUp()
         }
+
+        registerDetailsBinding.loginPhone.setText(SharedHelper.getKey(requireContext(), "register_phone"))
     }
+
+
 
 }

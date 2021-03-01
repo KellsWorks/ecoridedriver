@@ -1,6 +1,7 @@
 package app.ecoride_agent.ui.auth.login
 
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,7 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         loginBinding = FragmentLoginBinding.inflate(inflater, container, false)
         loginBinding.lifecycleOwner = this
@@ -31,6 +32,9 @@ class LoginFragment : Fragment() {
         loginBinding.createAccount.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
+
+        Html.fromHtml()
+            .also { loginBinding.createAccount.text = it }
     }
 
 }
