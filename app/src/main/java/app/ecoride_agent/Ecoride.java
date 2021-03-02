@@ -16,6 +16,8 @@ public class Ecoride extends Application {
     public static final String BASE_URL = "http://192.168.43.200:322/api/ecoride/v1/";
     public static final String PROFILES_URL = "http://192.168.43.200:322/storage/profile/";
 
+    public static final String FCM_URL = "https://fcm.googleapis.com/";
+
     private static Ecoride mInstance;
 
     @Override
