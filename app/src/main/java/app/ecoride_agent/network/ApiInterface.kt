@@ -66,6 +66,6 @@ interface ApiInterface {
     fun sendFcm(@Body jsonObject: JsonObject?): Observable<Any?>?
 
     /* Incoming ride */
-    @GET("")
+
 
 }
