@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "282740899217",
+    "project_id": "ecoride-304520",
+    "storage_bucket": "ecoride-304520.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282740899217:android:c71305827794ffe205ee30",
+        "android_client_info": {
+          "package_name": "app.ecoride_agent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282740899217-s2tu2l6nrkkge8km04c6feukq3d9jgi2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUMJ22PWhOJLlKCztuoFRBAcyhYMLytmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282740899217-s2tu2l6nrkkge8km04c6feukq3d9jgi2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282740899217:android:cfb38aa89591dcea05ee30",
+        "android_client_info": {
+          "package_name": "app.ecoride_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282740899217-s2tu2l6nrkkge8km04c6feukq3d9jgi2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUMJ22PWhOJLlKCztuoFRBAcyhYMLytmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282740899217-s2tu2l6nrkkge8km04c6feukq3d9jgi2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

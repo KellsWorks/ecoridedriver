@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -40,6 +41,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
+
 
     //Gif views
     def lottieVersion = "3.4.0"
