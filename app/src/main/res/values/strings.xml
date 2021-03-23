@@ -79,4 +79,7 @@
     <string name="ride_messages">Ride messages</string>
     <string name="today">Today</string>
     <string name="say_something">Say something...</string>
+    <string name="profile">Profile</string>
+    <string name="kells_kamuzu">Kells Kamuzu</string>
+    <string name="kellsworks_gmail_com">kellsworks@gmail.com</string>
 </resources>
