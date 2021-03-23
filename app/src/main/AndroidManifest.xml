@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecorideagent"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.onboard.OnBoardingActivity"></activity>
+        <activity android:name=".ui.notifications.NotificationsActivity"></activity>
+        <activity android:name=".ui.onboard.OnBoardingActivity" />
         <activity android:name=".ui.upcoming.IncomingRequestActivity" />
         <activity android:name=".ui.auth.AuthenticationActivity" />
         <activity android:name=".ui.trips.TripsActivity" />

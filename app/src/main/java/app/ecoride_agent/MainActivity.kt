@@ -18,6 +18,7 @@ import app.ecoride_agent.helpers.SharedHelper
 import app.ecoride_agent.ui.auth.AuthenticationActivity
 import app.ecoride_agent.ui.documents.DocumentsActivity
 import app.ecoride_agent.ui.earnings.EarningsActivity
+import app.ecoride_agent.ui.notifications.NotificationsActivity
 import app.ecoride_agent.ui.profile.ProfileActivity
 import app.ecoride_agent.ui.summary.SummaryActivity
 import app.ecoride_agent.ui.trips.TripsActivity
@@ -42,6 +43,13 @@ class MainActivity : AppCompatActivity(){
         mainBinding.drawerController.setOnClickListener {
             openCloseNavigationDrawer()
         }
+
+        mainBinding.notifications.setOnClickListener {
+            startActivity(
+                Intent(this, NotificationsActivity::class.java)
+            )
+        }
+
         mainBinding.navView.bringToFront()
 
         mainBinding.navView.findViewById<RelativeLayout>(R.id.avatar)
