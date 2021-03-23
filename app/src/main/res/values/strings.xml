@@ -76,4 +76,7 @@
     <string name="start">start</string>
     <string name="maps_api_key">AIzaSyAT8TT5ONNjFdWWp3enIDIZrVm5bKcm_G4</string>
     <string name="incoming_request">Incoming request</string>
+    <string name="ride_messages">Ride messages</string>
+    <string name="today">Today</string>
+    <string name="say_something">Say something...</string>
 </resources>

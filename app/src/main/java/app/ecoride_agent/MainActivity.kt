@@ -18,6 +18,7 @@ import app.ecoride_agent.helpers.SharedHelper
 import app.ecoride_agent.ui.auth.AuthenticationActivity
 import app.ecoride_agent.ui.documents.DocumentsActivity
 import app.ecoride_agent.ui.earnings.EarningsActivity
+import app.ecoride_agent.ui.messages.MessagesActivity
 import app.ecoride_agent.ui.notifications.NotificationsActivity
 import app.ecoride_agent.ui.profile.ProfileActivity
 import app.ecoride_agent.ui.summary.SummaryActivity
@@ -47,6 +48,11 @@ class MainActivity : AppCompatActivity(){
         mainBinding.notifications.setOnClickListener {
             startActivity(
                 Intent(this, NotificationsActivity::class.java)
+            )
+        }
+        mainBinding.messages.setOnClickListener {
+            startActivity(
+                Intent(this, MessagesActivity::class.java)
             )
         }
 
