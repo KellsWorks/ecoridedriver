@@ -67,7 +67,7 @@ class RegisterFragment : Fragment() {
         progressDialog.show(requireContext(), "Registering...")
 
         val api = ApiClient.client!!.create(ApiInterface::class.java)
-        val register: Call<Register> = api.register(name, phone, email, password, c_password, emergency, "ecoride_agent")
+        val register: Call<Register> = api.register(name, email, phone, "ecoride_agent", emergency, password, c_password)
 
         register.enqueue(object : Callback<Register?> {
 
