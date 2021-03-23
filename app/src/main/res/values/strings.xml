@@ -66,7 +66,7 @@
     <string name="mw_code">+265</string>
     <string name="log_in">Log in</string>
     <string name="do_not_have_an_account_create_an_account">Do not have an account? Create an account</string>
-    <string name="create_profile">Create profile</string>
+    <string name="create_profile">Create an account</string>
     <string name="username">Username</string>
     <string name="continue_to_register">Continue to register</string>
     <string name="confirm_password">Confirm password</string>
@@ -83,4 +83,5 @@
     <string name="kells_kamuzu">Kells Kamuzu</string>
     <string name="kellsworks_gmail_com">kellsworks@gmail.com</string>
     <string name="_265_99_363_48_27">+265 99 363 48 27</string>
+    <string name="email_address">Email address</string>
 </resources>
