@@ -44,7 +44,7 @@ class LoginFragment : Fragment() {
         loginBinding.login.setOnClickListener {
             if (validate()){
                 login(
-                        "265"+loginBinding.loginPhone.text.toString(),
+                        loginBinding.loginPhone.text.toString(),
                         loginBinding.loginPassword.text.toString()
                 )
             }
@@ -54,8 +54,8 @@ class LoginFragment : Fragment() {
 
     private fun validate() : Boolean{
 
-        if (loginBinding.loginPhone.text.toString().length != 9){
-            Toasty.warning(requireContext(), "Enter a 9 digit number").show()
+        if (loginBinding.loginPhone.text.toString().length != 10){
+            Toasty.warning(requireContext(), "Enter a 10 digit number").show()
             return false
         }
 

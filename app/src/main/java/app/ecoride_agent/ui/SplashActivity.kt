@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
             )
         }else{
 
-            if (!SharedHelper.getKey(this, "token").isNullOrEmpty()){
+            if (!SharedHelper.getKey(this, "remember_token").isNullOrEmpty()){
                 startActivity(Intent(
                     this, MainActivity::class.java
                 ))
