@@ -84,4 +84,7 @@
     <string name="kellsworks_gmail_com">kellsworks@gmail.com</string>
     <string name="_265_99_363_48_27">+265 99 363 48 27</string>
     <string name="email_address">Email address</string>
+    <string name="choose_a_picture">Choose a picture</string>
+    <string name="view_profile_picture">View profile picture</string>
+    <string name="choose_an_action">Choose an action</string>
 </resources>

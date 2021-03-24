@@ -69,6 +69,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:src="@drawable/user"
+                        android:id="@+id/changeProfile"
                         android:layout_margin="10dp"
                         />
                     <LinearLayout
@@ -108,9 +109,9 @@
                               android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
                               android:src="@drawable/ic_baseline_phone_24"
-                              android:background="@drawable/circle_white"
+                              android:background="@drawable/rectangle_dark"
                               android:padding="5dp"
-                              />
+                              android:contentDescription="@string/image" />
 
                     <TextView
                         android:layout_width="wrap_content"

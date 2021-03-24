@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import app.ecoride_agent.R
 import app.ecoride_agent.databinding.ActivityProfileBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -22,6 +23,14 @@ class ProfileActivity : AppCompatActivity() {
         profileBinding.profileBack.setOnClickListener {
             onBackPress()
             }
+
+        profileBinding.changeProfile.setOnClickListener {
+            val dialog = BottomSheetDialog(this)
+            val view = dialog.layoutInflater.inflate(R.layout.dialog_profile, null)
+            dialog.setContentView(view)
+            dialog.dismissWithAnimation = true
+            dialog.show()
+        }
     }
 
     private fun onBackPress(){
