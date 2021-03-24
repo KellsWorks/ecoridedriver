@@ -1,22 +1,20 @@
 package app.ecoride_agent.epoxy.trips
 
-import app.ecoride_agent.data.Notifications
+import app.ecoride_agent.data.Trips
 import com.airbnb.epoxy.Typed2EpoxyController
 
-class TripsEpoxyController : Typed2EpoxyController<Int, List<Notifications>> (){
+class TripsEpoxyController : Typed2EpoxyController<Int, List<Trips>> (){
 
-    override fun buildModels(status: Int?, notifications: List<Notifications>?) {
-        if (notifications != null) {
-            for(notification in notifications){
-//                NotificationsEpoxyModel_()
-//                    .id(notification.title)
-//                    .data(notification)
-//                    .click { _, _, _, position ->
-//
-//                        setData(1, notifications.drop(position))
-//
-//                    }
-//                    .addTo(this)
+    override fun buildModels(status: Int?, trips: List<Trips>?) {
+        if (trips != null) {
+            for(trip in trips){
+                TripsEpoxyModel_()
+                    .id(trip.title)
+                    .data(trip)
+                    .click { _, _, _, _ ->
+
+                    }
+                    .addTo(this)
             }
         }
     }
