@@ -87,4 +87,5 @@
     <string name="choose_a_picture">Choose a picture</string>
     <string name="view_profile_picture">View profile picture</string>
     <string name="choose_an_action">Choose an action</string>
+    <string name="default_notification_channel_id">Ecoride Malawi Driver App</string>
 </resources>

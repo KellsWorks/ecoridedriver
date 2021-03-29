@@ -2,6 +2,7 @@ package app.ecoride_agent.network
 
 import app.ecoride_agent.BuildConfig
 import app.ecoride_agent.network.responses.GeneralResponse
+import app.ecoride_agent.network.responses.fcm.FCMResponse
 import app.ecoride_agent.network.responses.location.LocationUpdate
 import app.ecoride_agent.network.responses.login.Login
 import app.ecoride_agent.network.responses.register.Register
@@ -66,6 +67,12 @@ interface ApiInterface {
     fun sendFcm(@Body jsonObject: JsonObject?): Observable<Any?>?
 
     /* Incoming ride */
+
+    @FormUrlEncoded
+    @POST(value = "get-fcm-topic")
+    fun getFCMTopic(
+        @Field("id") id : Int
+    ): Call<FCMResponse>
 
 
 }

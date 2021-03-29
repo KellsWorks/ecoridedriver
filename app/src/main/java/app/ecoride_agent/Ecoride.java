@@ -5,7 +5,11 @@ import android.location.Location;
 
 import androidx.multidex.MultiDex;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import app.ecoride_agent.helpers.SharedHelper;
 import app.ecoride_agent.utils.ConnectivityReceiver;
+import app.ecoride_agent.network.fcm.FCMTopic;
 import timber.log.Timber;
 
 public class Ecoride extends Application {
@@ -30,6 +34,17 @@ public class Ecoride extends Application {
         if (BuildConfig.DEBUG){
             Timber.plant(new Timber.DebugTree());
         }
+
+        FirebaseMessaging.getInstance().subscribeToTopic(SharedHelper.getKey(this, "f_c_m_topic"))
+                .addOnCompleteListener(task -> {
+                    String msg = "Subscribed";
+                    if (!task.isSuccessful()) {
+                        msg = "Not subscribed";
+                    }
+                    Timber.d(msg);
+                });
+
+        new FCMTopic(SharedHelper.getIntKey(this, "user_id")).getTopic(this, SharedHelper.getIntKey(this, "user_id"));
     }
 
     public static synchronized Ecoride getInstance() {

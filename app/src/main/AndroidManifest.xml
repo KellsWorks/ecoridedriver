@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecorideagent"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.messages.MessagesActivity"></activity>
+        <activity android:name=".ui.messages.MessagesActivity"/>
         <activity android:name=".ui.notifications.NotificationsActivity" />
         <activity android:name=".ui.onboard.OnBoardingActivity" />
         <activity android:name=".ui.upcoming.IncomingRequestActivity" />
@@ -59,6 +59,14 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAT8TT5ONNjFdWWp3enIDIZrVm5bKcm_G4" />
+
+        <service
+            android:name=".network.fcm.FCM"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
