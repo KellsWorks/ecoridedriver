@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecorideagent"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.messages.MessagesActivity"/>
+        <activity android:name=".ui.upcoming.IncomingActivity"></activity>
+        <activity android:name=".ui.messages.MessagesActivity" />
         <activity android:name=".ui.notifications.NotificationsActivity" />
         <activity android:name=".ui.onboard.OnBoardingActivity" />
         <activity android:name=".ui.upcoming.IncomingRequestActivity" />

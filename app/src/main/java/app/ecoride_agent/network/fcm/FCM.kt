@@ -9,6 +9,7 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import app.ecoride_agent.R
 import app.ecoride_agent.ui.notifications.NotificationsActivity
+import app.ecoride_agent.ui.upcoming.IncomingActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import timber.log.Timber
@@ -19,8 +20,10 @@ class FCM : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
 
         if (remoteMessage.notification != null) {
-            remoteMessage.notification!!
-                .body?.let { sendNotification(it) }
+//            remoteMessage.notification!!
+//                .body?.let { sendNotification(it) }
+
+            startActivity(Intent(baseContext, IncomingActivity::class.java))
         }
 
     }
