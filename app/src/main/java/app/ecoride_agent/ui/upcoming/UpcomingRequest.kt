@@ -49,7 +49,7 @@ open class UpcomingRequest : Fragment() {
         }
 
         upcomingRequestBinding.btnAccept.setOnClickListener {
-            findNavController().navigate(R.id.action_upcomingRequest_to_tripProgressFragment)
+            findNavController().navigate(R.id.action_upcomingRequest2_to_tripProgressFragment2)
         }
 
     }

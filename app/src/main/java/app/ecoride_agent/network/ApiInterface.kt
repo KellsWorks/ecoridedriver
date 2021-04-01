@@ -69,9 +69,10 @@ interface ApiInterface {
     /* Incoming ride */
 
     @FormUrlEncoded
-    @POST(value = "get-fcm-topic")
-    fun getFCMTopic(
-        @Field("id") id : Int
+    @POST(value = "send-device-token")
+    fun sendTokenToServer(
+        @Field("id") id : Int,
+        @Field("device_id") device_id : String
     ): Call<FCMResponse>
 
 

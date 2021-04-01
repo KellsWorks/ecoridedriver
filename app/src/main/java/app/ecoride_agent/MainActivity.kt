@@ -15,6 +15,7 @@ import androidx.databinding.DataBindingUtil
 import app.ecoride_agent.customs.CustomProgressDialog
 import app.ecoride_agent.databinding.ActivityMainBinding
 import app.ecoride_agent.helpers.SharedHelper
+import app.ecoride_agent.network.fcm.FCMTopic
 import app.ecoride_agent.ui.auth.AuthenticationActivity
 import app.ecoride_agent.ui.documents.DocumentsActivity
 import app.ecoride_agent.ui.earnings.EarningsActivity
@@ -25,6 +26,8 @@ import app.ecoride_agent.ui.summary.SummaryActivity
 import app.ecoride_agent.ui.trips.TripsActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.firebase.iid.FirebaseInstanceId.getInstance
+import timber.log.Timber
 
 
 class MainActivity : AppCompatActivity(){
@@ -35,6 +38,12 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
 
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+
+        getInstance().instanceId.addOnSuccessListener { instanceIdResult ->
+            Timber.e(instanceIdResult.token)
+            FCMTopic(SharedHelper.getIntKey(this, "firebase_id"), instanceIdResult.token).sendToken()
+        }
 
     }
 

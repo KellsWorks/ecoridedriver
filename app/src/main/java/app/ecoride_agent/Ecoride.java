@@ -35,16 +35,6 @@ public class Ecoride extends Application {
             Timber.plant(new Timber.DebugTree());
         }
 
-        FirebaseMessaging.getInstance().subscribeToTopic(SharedHelper.getKey(this, "f_c_m_topic"))
-                .addOnCompleteListener(task -> {
-                    String msg = "Subscribed";
-                    if (!task.isSuccessful()) {
-                        msg = "Not subscribed";
-                    }
-                    Timber.d(msg);
-                });
-
-        new FCMTopic(SharedHelper.getIntKey(this, "user_id")).getTopic(this, SharedHelper.getIntKey(this, "user_id"));
     }
 
     public static synchronized Ecoride getInstance() {

@@ -2,9 +2,16 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/request"
     app:startDestination="@id/upcomingRequest2">
-
     <fragment
         android:id="@+id/upcomingRequest2"
         android:name="app.ecoride_agent.ui.upcoming.UpcomingRequest"
-        android:label="UpcomingRequest" />
+        android:label="UpcomingRequest" >
+        <action
+            android:id="@+id/action_upcomingRequest2_to_tripProgressFragment2"
+            app:destination="@id/tripProgressFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/tripProgressFragment2"
+        android:name="app.ecoride_agent.ui.trips.progress.TripProgressFragment"
+        android:label="TripProgressFragment" />
 </navigation>

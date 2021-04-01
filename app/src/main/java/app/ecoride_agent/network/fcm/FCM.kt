@@ -20,10 +20,11 @@ class FCM : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
 
         if (remoteMessage.notification != null) {
-//            remoteMessage.notification!!
-//                .body?.let { sendNotification(it) }
-
-            startActivity(Intent(baseContext, IncomingActivity::class.java))
+            remoteMessage.notification!!
+                .body?.let { sendNotification(it) }
+            val intent = Intent(baseContext, IncomingActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
 
     }
