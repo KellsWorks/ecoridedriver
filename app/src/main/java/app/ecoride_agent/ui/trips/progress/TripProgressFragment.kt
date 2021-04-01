@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import app.ecoride_agent.Ecoride
 import app.ecoride_agent.R
 import app.ecoride_agent.customs.CustomMapMarker
@@ -51,6 +52,9 @@ class TripProgressFragment : Fragment() , OnMapReadyCallback{
         tripsProgressBinding.progressMap.getMapAsync(this)
         tripsProgressBinding.progressMap.onResume()
 
+        tripsProgressBinding.tripProgressCancel.setOnClickListener{
+            tripCancel()
+        }
     }
 
     override fun onMapReady(p0: GoogleMap?) {
@@ -202,6 +206,10 @@ class TripProgressFragment : Fragment() , OnMapReadyCallback{
         }
 
         return poly
+    }
+
+    private fun tripCancel(){
+        findNavController().navigate(R.id.action_tripProgressFragment_to_homeFragment)
     }
 
 }
