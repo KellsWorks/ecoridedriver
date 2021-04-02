@@ -176,6 +176,7 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:text="@string/reject"
+                android:textStyle="bold"
                 android:background="@color/green"
                 android:textColor="#FFF" />
 
@@ -187,7 +188,8 @@
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="Accept"
+                android:textStyle="bold"
+                android:text="@string/accept"
                 android:background="?colorPrimary"
                 android:textColor="#FFF" />
 
