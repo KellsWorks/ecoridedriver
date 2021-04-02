@@ -22,8 +22,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import app.ecoride_agent.Ecoride
 import app.ecoride_agent.R
+import app.ecoride_agent.broadcasts.BroadcastLocation
 import app.ecoride_agent.customs.CustomMapMarker
 import app.ecoride_agent.databinding.FragmentHomeBinding
+import app.ecoride_agent.helpers.SharedHelper
 import app.ecoride_agent.utils.GPSTracker
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.*
@@ -40,8 +42,8 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
     private lateinit var homeBinding: FragmentHomeBinding
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
         homeBinding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -76,8 +78,21 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             getMapAsync(this@HomeFragment)
         }
 
+        if(SharedHelper.getKey(requireContext(), "is_offline") == "true"){
+            findNavController().navigate(R.id.action_homeFragment_to_offlineFragment)
+        }else{
+            Toast.makeText(requireContext(), "You're online", Toast.LENGTH_SHORT)
+                .show()
+        }
+
         homeBinding.btnGoOffline.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_upcomingRequest)
+            SharedHelper.putKey(requireContext(), "is_offline", "true")
+            val broadcastLocation = BroadcastLocation()
+            broadcastLocation.broadcastLocation(
+                SharedHelper.getIntKey(context, "user_id"),
+                0.0, 0.0
+            )
+            findNavController().navigate(R.id.action_homeFragment_to_offlineFragment)
         }
 
         homeBinding.spotBooking.setOnClickListener {
@@ -98,18 +113,18 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             mGoogleMap.isBuildingsEnabled = true
             mGoogleMap.isIndoorEnabled = true
             mGoogleMap.setMapStyle(
-                    MapStyleOptions.loadRawResourceStyle(
-                            requireContext(),
-                            R.raw.style_json
-                    )
+                MapStyleOptions.loadRawResourceStyle(
+                    requireContext(),
+                    R.raw.style_json
+                )
             )
 
             mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
             getLastLocation()
 
             val sharedPreference: SharedPreferences? = context?.getSharedPreferences(
-                    "MapsMainLocation",
-                    Context.MODE_PRIVATE
+                "MapsMainLocation",
+                Context.MODE_PRIVATE
             )
 
             val lat = sharedPreference?.getFloat("Latitude", 0F)
@@ -120,32 +135,32 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             sharedPreferences?.apply()
 
             val markerIcon = getMarkerIcon(
-                    root = (requireView().parent as ViewGroup),
-                    text = "You are currently here",
-                    image = app.ecoride_agent.R.drawable.rectangle_side,
-                    isSelected = true
+                root = (requireView().parent as ViewGroup),
+                text = "You are currently here",
+                image = app.ecoride_agent.R.drawable.rectangle_side,
+                isSelected = true
             )
 
             mGoogleMap.addMarker(
-                    MarkerOptions()
-                            .position(LatLng(lat!!.toDouble(), long!!.toDouble()))
-                            .icon(markerIcon)
+                MarkerOptions()
+                    .position(LatLng(lat!!.toDouble(), long!!.toDouble()))
+                    .icon(markerIcon)
             )
 
             val camera = CameraPosition.builder().target(LatLng(lat.toDouble(), long.toDouble())).zoom(
-                    Ecoride.DEFAULT_ZOOM
+                Ecoride.DEFAULT_ZOOM
             ).bearing(0F).tilt(45F).build()
             mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(camera))
 
 
         }else{
             if (ActivityCompat.checkSelfPermission(
-                            requireActivity(),
-                            Manifest.permission.ACCESS_COARSE_LOCATION
-                    ) == PackageManager.PERMISSION_GRANTED &&
+                    requireActivity(),
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(
-                        requireActivity(),
-                        Manifest.permission.ACCESS_FINE_LOCATION
+                    requireActivity(),
+                    Manifest.permission.ACCESS_FINE_LOCATION
                 ) == PackageManager.PERMISSION_GRANTED
             ) {
                 Timber.e("location checked")
@@ -161,12 +176,12 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
 
     private fun checkPermissions(): Boolean {
         if (ActivityCompat.checkSelfPermission(
-                        requireActivity(),
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                ) == PackageManager.PERMISSION_GRANTED &&
+                requireActivity(),
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED &&
             ActivityCompat.checkSelfPermission(
-                    requireActivity(),
-                    Manifest.permission.ACCESS_FINE_LOCATION
+                requireActivity(),
+                Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
             return true
@@ -176,12 +191,12 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
 
     private fun requestPermissions() {
         ActivityCompat.requestPermissions(
-                requireActivity(),
-                arrayOf(
-                        Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.ACCESS_FINE_LOCATION
-                ),
-                Ecoride.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION
+            requireActivity(),
+            arrayOf(
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ),
+            Ecoride.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION
         )
     }
 
@@ -191,12 +206,12 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             if (isLocationEnabled()) {
 
                 if (ActivityCompat.checkSelfPermission(
-                                requireContext(),
-                                Manifest.permission.ACCESS_FINE_LOCATION
-                        ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                                requireContext(),
-                                Manifest.permission.ACCESS_COARSE_LOCATION
-                        ) != PackageManager.PERMISSION_GRANTED
+                        requireContext(),
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                    ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                        requireContext(),
+                        Manifest.permission.ACCESS_COARSE_LOCATION
+                    ) != PackageManager.PERMISSION_GRANTED
                 ) {
 
                     return
@@ -210,8 +225,8 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
                         val longitude = location.longitude
 
                         val preference: SharedPreferences? = context?.getSharedPreferences(
-                                "MapsMainLocation",
-                                Context.MODE_PRIVATE
+                            "MapsMainLocation",
+                            Context.MODE_PRIVATE
                         )
 
                         val editor = preference?.edit()
@@ -243,8 +258,8 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         mFusedLocationClient.requestLocationUpdates(
-                mLocationRequest, mLocationCallback,
-                Looper.myLooper()
+            mLocationRequest, mLocationCallback,
+            Looper.myLooper()
         )
     }
 
@@ -259,7 +274,7 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
     private fun isLocationEnabled(): Boolean {
         val locationManager: LocationManager = context?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
-                LocationManager.NETWORK_PROVIDER
+            LocationManager.NETWORK_PROVIDER
         )
     }
 

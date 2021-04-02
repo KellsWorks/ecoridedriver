@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import app.ecoride_agent.broadcasts.BroadcastLocation
 import app.ecoride_agent.databinding.FragmentOfflineBinding
+import app.ecoride_agent.helpers.SharedHelper
 
-class OfflineFragment : Fragment() {
+open class OfflineFragment : Fragment() {
 
     private lateinit var offlineBinding: FragmentOfflineBinding
 
@@ -19,19 +21,18 @@ class OfflineFragment : Fragment() {
 
         offlineBinding = FragmentOfflineBinding.inflate(layoutInflater, container, false)
         offlineBinding.lifecycleOwner = this
+        offlineBinding.fragment = this
 
         return offlineBinding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        offlineBinding.goOnlineBtn.setOnClickListener {
-            goOffline(it)
-        }
-    }
-
-    private fun goOffline(v: View?) {
+    open fun goOffline(v: View?) {
+        SharedHelper.putKey(requireContext(), "is_offline", "true")
+        val broadcastLocation = BroadcastLocation()
+        broadcastLocation.broadcastLocation(
+            SharedHelper.getIntKey(context, "user_id"),
+            0.0, 0.0
+        )
         findNavController().navigateUp()
     }
 }
