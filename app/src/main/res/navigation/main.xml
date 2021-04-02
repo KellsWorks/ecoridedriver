@@ -17,7 +17,11 @@
     <fragment
         android:id="@+id/offlineFragment"
         android:name="app.ecoride_agent.ui.fragments.OfflineFragment"
-        android:label="OfflineFragment" />
+        android:label="OfflineFragment" >
+        <action
+            android:id="@+id/action_offlineFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/upcomingRequest"
         android:name="app.ecoride_agent.ui.upcoming.UpcomingRequest"

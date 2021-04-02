@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import app.ecoride_agent.R
 import app.ecoride_agent.broadcasts.BroadcastLocation
 import app.ecoride_agent.databinding.FragmentOfflineBinding
 import app.ecoride_agent.helpers.SharedHelper
@@ -27,12 +28,7 @@ open class OfflineFragment : Fragment() {
     }
 
     open fun goOffline(v: View?) {
-        SharedHelper.putKey(requireContext(), "is_offline", "true")
-        val broadcastLocation = BroadcastLocation()
-        broadcastLocation.broadcastLocation(
-            SharedHelper.getIntKey(context, "user_id"),
-            0.0, 0.0
-        )
-        findNavController().navigateUp()
+        SharedHelper.putKey(requireContext(), "is_offline", "false")
+        findNavController().navigate(R.id.action_offlineFragment_to_homeFragment)
     }
 }

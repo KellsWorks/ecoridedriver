@@ -78,12 +78,22 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             getMapAsync(this@HomeFragment)
         }
 
-        if(SharedHelper.getKey(requireContext(), "is_offline") == "true"){
-            findNavController().navigate(R.id.action_homeFragment_to_offlineFragment)
-        }else{
-            Toast.makeText(requireContext(), "You're online", Toast.LENGTH_SHORT)
-                .show()
+
+        homeBinding.spotBooking.setOnClickListener {
+            spotBooking()
         }
+
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+//        if(SharedHelper.getKey(requireContext(), "is_offline") == "true"){
+//            findNavController().navigate(R.id.action_homeFragment_to_offlineFragment)
+//        }else{
+//            Toast.makeText(requireContext(), "You're online", Toast.LENGTH_SHORT)
+//                .show()
+//        }
 
         homeBinding.btnGoOffline.setOnClickListener {
             SharedHelper.putKey(requireContext(), "is_offline", "true")
@@ -94,11 +104,6 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             )
             findNavController().navigate(R.id.action_homeFragment_to_offlineFragment)
         }
-
-        homeBinding.spotBooking.setOnClickListener {
-            spotBooking()
-        }
-
     }
 
     override fun onMapReady(map: GoogleMap?) {
@@ -137,7 +142,7 @@ open class HomeFragment : Fragment(), OnMapReadyCallback {
             val markerIcon = getMarkerIcon(
                 root = (requireView().parent as ViewGroup),
                 text = "You are currently here",
-                image = app.ecoride_agent.R.drawable.rectangle_side,
+                image = R.drawable.rectangle_side,
                 isSelected = true
             )
 

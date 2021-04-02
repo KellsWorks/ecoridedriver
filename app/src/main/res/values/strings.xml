@@ -90,5 +90,5 @@
     <string name="default_notification_channel_id">Ecoride Malawi Driver App</string>
     <string name="accept">Accept</string>
     <string name="ride_has_not_started_yet">Ride has not started yet!</string>
-    <string name="you_are_currently_offline_you_will_not_receive_any_incoming_calls_till_you_re_back_online">You are currently offline, you will not receive any incoming calls till you\'re back online</string>
+    <string name="you_are_currently_offline_you_will_not_receive_any_incoming_calls_till_you_re_back_online">You are currently offline, you will not receive any incoming requests till you\'re back online</string>
 </resources>

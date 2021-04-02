@@ -73,9 +73,16 @@ public class GPSTracker extends Service{
         @Override
         public void onLocationChanged(Location location) {
 
-            if (location.getProvider().equals(KalmanLocationManager.KALMAN_PROVIDER)) {
-                broadcastLocation = new BroadcastLocation();
-                broadcastLocation.broadcastLocation(SharedHelper.getIntKey(context, "user_id"), location.getLatitude(), location.getLongitude());
+            if(SharedHelper.getKey(getBaseContext(), "is_offline").equals("yes")){
+                if (location.getProvider().equals(KalmanLocationManager.KALMAN_PROVIDER)) {
+                    broadcastLocation = new BroadcastLocation();
+                    broadcastLocation.broadcastLocation(SharedHelper.getIntKey(context, "user_id"), 0.0, 0.0);
+                }
+            }else{
+                if (location.getProvider().equals(KalmanLocationManager.KALMAN_PROVIDER)) {
+                    broadcastLocation = new BroadcastLocation();
+                    broadcastLocation.broadcastLocation(SharedHelper.getIntKey(context, "user_id"), location.getLatitude(), location.getLongitude());
+                }
             }
 
         }

@@ -60,6 +60,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAT8TT5ONNjFdWWp3enIDIZrVm5bKcm_G4" />
+        
 
         <service
             android:name=".network.fcm.FCM"
