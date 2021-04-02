@@ -2,6 +2,7 @@ package app.ecoride_agent.ui.trips.progress
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.AsyncTask
@@ -14,6 +15,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import app.ecoride_agent.Ecoride
+import app.ecoride_agent.MainActivity
 import app.ecoride_agent.R
 import app.ecoride_agent.customs.CustomMapMarker
 import app.ecoride_agent.databinding.FragmentTripProgressBinding
@@ -52,9 +54,9 @@ class TripProgressFragment : Fragment() , OnMapReadyCallback{
         tripsProgressBinding.progressMap.getMapAsync(this)
         tripsProgressBinding.progressMap.onResume()
 
-//        tripsProgressBinding.tripProgressCancel.setOnClickListener{
-//            tripCancel()
-//        }
+        tripsProgressBinding.declineRide.setOnClickListener{
+            tripCancel()
+        }
     }
 
     override fun onMapReady(p0: GoogleMap?) {
@@ -209,7 +211,7 @@ class TripProgressFragment : Fragment() , OnMapReadyCallback{
     }
 
     private fun tripCancel(){
-        findNavController().navigate(R.id.action_tripProgressFragment_to_homeFragment)
+        startActivity(Intent(requireActivity(), MainActivity::class.java))
     }
 
 }
