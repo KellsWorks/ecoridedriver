@@ -35,7 +35,7 @@ class FCM : FirebaseMessagingService() {
 
 
     private fun sendNotification(messageBody: String) {
-        val intent = Intent(this, IncomingActivity::class.java)
+        val intent = Intent(baseContext, IncomingActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         val pendingIntent = PendingIntent.getActivity(
             this, 0 /* Request code */, intent,

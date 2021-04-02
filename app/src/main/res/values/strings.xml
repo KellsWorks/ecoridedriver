@@ -89,4 +89,5 @@
     <string name="choose_an_action">Choose an action</string>
     <string name="default_notification_channel_id">Ecoride Malawi Driver App</string>
     <string name="accept">Accept</string>
+    <string name="ride_has_not_started_yet">Ride has not started yet!</string>
 </resources>

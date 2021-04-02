@@ -52,9 +52,9 @@ class TripProgressFragment : Fragment() , OnMapReadyCallback{
         tripsProgressBinding.progressMap.getMapAsync(this)
         tripsProgressBinding.progressMap.onResume()
 
-        tripsProgressBinding.tripProgressCancel.setOnClickListener{
-            tripCancel()
-        }
+//        tripsProgressBinding.tripProgressCancel.setOnClickListener{
+//            tripCancel()
+//        }
     }
 
     override fun onMapReady(p0: GoogleMap?) {
